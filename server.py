@@ -1,20 +1,20 @@
-from flask import Flask
-from forms import SignUpForm
+from flask import Flask, render_template
+from donatorForm import DonorSignUp
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'upliftedu'
 
 @app.route('/')
 def home():
-    return 'Hello World'
+    return 'Welcome'
 
 @app.route('/profile/<int:profile_id>')
 def profile(profile_id):
     return 'Profile number: ' + str(profile_id)
 
-@approute('/donorSignUp'):
+@app.route('/donorSignUp')
 def donorSignUp():
-    form = SignUpForm()
-    return render_template('DonorSignUp.html, form=form')
+    form = DonorSignUp()
+    return render_template('DonorSignUp.html', form=form)
 
 if __name__ == '__main__':
     app.run()
