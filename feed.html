@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Include your comments here -->
+
+<head> 
+	<meta charset="utf-8" /> 
+	<title>UpliftEdu</title>
+	<link rel="stylesheet" type="text/css" href="h4h.css">
+</head>
+<body>
+	<div id="titles">
+	<h1 class="title">UpliftEdu</h1>
+	<p class="goal">Our Goal:</p>
+	<p class="goal">To help Bay Area students pay for higher education</p>
+    </div>
+    <div id="loop">
+        {% for students in students %}
+            <h2>{{student.firstname}} {{student.lastname}}</h2>
+            <h3>{{student.university}}</h3>
+            <h3>{{student.major}}</h3>
+            <h3><a href="">Donate</a></h3>
+            <h3><a href="">Learn More</a></h3>
+        {% endfor %}
+    </div>
+</body>
+</html>
